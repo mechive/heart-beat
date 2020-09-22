@@ -1,0 +1,187 @@
+
+
+// Variables
+// Custom Colors
+    $red:rgb(136, 56, 56);
+    $green:rgb(61, 126, 61);
+    $blue:rgb(79, 79, 161);
+// Color Scheme
+    $dark-bg:rgb(27, 27, 27);
+    $border-color:$red;
+    $shadow-color:rgb(0, 0, 0);
+// 
+*,html{
+    box-sizing: border-box;
+}
+html{
+    background-color:black;
+    border: none;
+    height: 96%;
+    margin: 0;
+    padding: 0;
+}
+*{
+    border: solid 1px $border-color;
+    padding:1%;
+    margin: 1%;
+    background-color:$dark-bg;
+    box-shadow: $shadow-color 0px 0px 10px 1px;
+}
+body{
+    height: 96%;
+    display: flex;
+    flex-direction: column;
+    margin: 1% 1%;
+}
+body{
+    align-items: center;
+    justify-content: center;
+    &>*{
+        width: 100%;
+    }
+}
+header{
+    flex: 1;
+    display: flex;
+    h1{
+        color: white;
+        flex: 1;
+    }
+    #mobile-nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 10;
+        transition: ease-in 5s;
+        h1{
+            flex: 1;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav{
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            a{
+                padding: 10%;
+                text-align: center;
+                color: white;
+                &:hover{
+                    background-color:$red;
+                    color: black;
+                }
+            }
+        }
+    }
+    #main-nav{
+        display:flex;
+        flex: 1;
+        a{
+            flex:1;
+            color: white;
+            text-align: center;
+
+            &:hover{
+                background-color:$red;
+                color: black;
+            }
+        }
+        @media only screen and (max-width: 900px) {
+            a {
+                display: none;
+            }
+        }
+        #burger-button{
+            color: white;
+            margin-left: auto;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+        }
+        @media only screen and (max-width: 900px) {
+            #burger-button{
+                display: flex;
+            }
+        }
+
+    }
+}
+main{
+    flex: 30;
+    display: flex;
+    #heart-container{
+        border: pink 1px solid;
+        flex:1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &>*{
+            box-shadow: none;
+        }
+        #heart::before{
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top:0px;
+            left: 0px;
+            border-radius: 50%;
+            background-color: pink;
+            transform:translateX(-50%);
+
+        }
+        #heart{
+            position: absolute;
+            background-color: pink;
+            box-shadow:none;
+            width: 150px;
+            height: 150px;
+            transform: rotate(44deg);
+            animation-name: beat;
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+            animation-timing-function: ease-out;
+            z-index: 5;
+        }
+        #heart::after{
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            left: 0px;
+            top: 0px;
+            border-radius: 50%;
+            transform:translateY(-50%);
+            background-color: pink;
+            z-index:1;
+        }
+        @keyframes beat{
+   
+            50%{
+                    transform:scale(30%) rotate(44deg);
+
+                }
+        }
+    }
+}
+footer{
+    flex: 1;
+}
+.show{
+    display: flex;
+}
+.hidden{
+    display: none;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "template0",
+  "version": "1.0.0",
+  "description": "A simple template base",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-update":"node-sass -w css/ -w scss/",
+    "sass": "node-sass -w scss/ -o css/ --recursive"
+  },
+  "author": "Mike Beckett",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

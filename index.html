@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.12.0-web/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Heart-Beat</title>
+</head>
+<body>
+    <header>
+        <h1>Heart-Beat</h1>
+        <div id="mobile-nav" class="hidden">
+            <h1>Heart-Beat</h1>
+            <nav>
+                <a  target="_blank" href="https://github.com/mickbeck">Github</a>
+            </nav>
+        </div>
+        <nav id="main-nav">
+            <a target="_blank" href="https://github.com/mickbeck">Github</a>
+            <i id="burger-button" class="fas fa-bars"></i>
+        </nav>
+    </header>
+    <main>
+        <!-- Simple CSS Heart-Beat Animation I learned off of Freecodecamp.com -->
+        <div id="heart-container">
+            <div id="heart"></div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- Gonna use JQuery for now until I learn how to replicate this properly with pure JS -->
+    <!-- Mobile Navigation Script -->
+    <script>
+        $(document).ready(function(){
+            $("#burger-button").click(function(){
+                if($("#mobile-nav").hasClass("hidden")){
+                    $("#mobile-nav").removeClass("hidden");
+                    $("#mobile-nav").addClass("show");
+                }else{
+                    $("#mobile-nav").removeClass("show");
+                    $("#mobile-nav").addClass("hidden");
+                }
+            });
+        });
+    </script>
+    <!-- Mobile Navigation Script -->
+</body>
+</html>
